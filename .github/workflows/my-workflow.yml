@@ -1,17 +1,28 @@
 name : My first workflow
 on : [push,workflow_dispatch]
 jobs:
-  my-first-job:
-    runs-on : ubuntu-latest
-    steps:
-      - name: List all files
-        run: ls -a
-      - name: Print working directory
-        run: pwd
-      - name: Checkout Repo
-        uses: actions/checkout@v6
-      - name: List files after checkout
-        run: ls -a
-  
+  # my-first-job:
+  #   runs-on : ubuntu-latest
+  #   steps:
+  #     - name: List all files
+  #       run: ls -a
+  #     - name: Print working directory
+  #       run: pwd
+  #     - name: Checkout Repo
+  #       uses: actions/checkout@v6
+  #     - name: List files after checkout
+  #       run: ls -a
 
-
+    my-second-job:
+      runs-on : ubuntu-latest
+      steps:
+        - name: Print node version
+          run: node -v
+        - name: Install Node
+          uses: actions/setup-node@v6
+          with:
+            node-version : '24'
+          
+        - name: Print node version
+          run: node -v
+        
